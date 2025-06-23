@@ -1,0 +1,117 @@
+**/node_modules/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.development
+.env.test
+.env.production
+**/__pycache__/
+tests/videos/*.mp4
+**/*.log
+**/dist/
+**/build/
+**.pth
+**/*.pth
+**/*.pkl
+**/*.ptl
+**/*.pthl
+**/*.pkl
+**/*.ptl
+**/*.pthl
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project specific
+calibration_data.json
+*.pth
+*.onnx
+*.pt
+*.weights
+logs/
+
+# Node modules (for React frontend)
+node_modules/
+web/dist/
+web/build/
+
+# TrackStudio static files (built from React)
+trackstudio/static/*
+!trackstudio/static/.gitkeep
+
+# Documentation
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json

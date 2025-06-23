@@ -1,0 +1,13 @@
+{
+    "rtsp_streams": [
+        "rtsp://ipro:Playbox1128@192.168.0.101/MediaInput/stream_1",
+        "rtsp://ipro:Playbox1128@192.168.0.121/MediaInput/stream_1"
+    ],
+    "camera_names": [
+        "Camera 1",
+        "Camera 2"
+    ],
+    "tracker": "rfdetr",
+    "merger": "bev_cluster",
+    "calibration_file": "calibration_data.json"
+}

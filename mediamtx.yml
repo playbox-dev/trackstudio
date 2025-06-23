@@ -1,0 +1,10 @@
+# MediaMTX configuration for RTMP to RTSP transformation
+
+# Logging
+logLevel: info
+
+# Path configuration - accept any stream dynamically
+paths:
+  all:
+    # Allow all publishers and readers
+    source: publisher

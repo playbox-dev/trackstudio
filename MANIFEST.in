@@ -1,0 +1,16 @@
+# Include documentation
+include README.md
+include LICENSE
+include TRACKSTUDIO_README.md
+
+# Include package data
+recursive-include trackstudio *.py
+recursive-include trackstudio/static *
+recursive-include trackstudio/templates *
+
+# Exclude unnecessary files
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
+recursive-exclude tests *
+recursive-exclude docs *

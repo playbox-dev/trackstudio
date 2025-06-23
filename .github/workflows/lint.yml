@@ -1,0 +1,80 @@
+name: Python Linting & Code Quality
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - '**.py'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
+      - '.github/workflows/lint.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - '**.py'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
+      - '.github/workflows/lint.yml'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        enable-cache: true
+
+    - name: Install dependencies
+      run: |
+        uv sync --all-extras --dev
+
+    - name: Run Ruff Linter
+      run: |
+        uv run ruff check trackstudio/ --output-format=github
+
+    - name: Run Ruff Formatter Check
+      run: |
+        uv run ruff format trackstudio/ --check
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+
+    - name: Install dependencies
+      run: |
+        uv sync --all-extras --dev
+
+    - name: Run Bandit Security Linter
+      run: |
+        uv run bandit -r trackstudio/ -f json -o bandit-report.json
+      continue-on-error: true
+
+    - name: Upload Bandit Report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: bandit-security-report
+        path: bandit-report.json

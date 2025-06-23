@@ -1,0 +1,14 @@
+{
+    "rtsp_streams": [
+        "rtsp://localhost:8554/camera0",
+        "rtsp://localhost:8554/camera1"
+    ],
+    "camera_names": [
+        "Test Camera 0",
+        "Test Camera 1"
+    ],
+    "tracker": "rfdetr",
+    "merger": "bev_cluster",
+    "calibration_file": "calibration_data.json",
+    "vision_fps": 10.0
+}

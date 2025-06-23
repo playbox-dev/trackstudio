@@ -1,0 +1,18 @@
+services:
+  mediamtx:
+    image: bluenviron/mediamtx:latest
+    network_mode: host
+    environment:
+      # Protocols configuration removed - using defaults from mediamtx.yml
+      - MTX_RTSPADDRESS=:8554
+      - MTX_RTMPADDRESS=:1935
+      - MTX_HLSADDRESS=:8888
+      - MTX_WEBRTCADDRESS=:8889
+      - MTX_APIADDRESS=:9997
+      # Enable all paths by default - streams will be created on-demand
+      - MTX_PATHS_ALL=yes
+      # Log configuration
+      - MTX_LOGLEVEL=info
+    volumes:
+      - ./mediamtx.yml:/mediamtx.yml:ro
+    restart: unless-stopped

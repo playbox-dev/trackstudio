@@ -47,13 +47,17 @@ A real-time multi-camera object detection and tracking system with WebRTC stream
 ## Installation
 
 ```bash
-pip install trackstudio
+# Install from github
+pip install git+https://github.com/playbox-dev/trackstudio.git
 ```
 
 For development:
 ```bash
 git clone https://github.com/playbox-dev/trackstudio
+cd trackstudio
 pip install -e .
+# or if using uv (recommended)
+uv sync --dev
 ```
 
 ## Using with Thinklet Cube

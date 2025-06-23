@@ -47,13 +47,17 @@ WebRTCストリーミング、コンピュータビジョン統合、Bird's Eye 
 ## インストール
 
 ```bash
-pip install trackstudio
+# GitHubからインストール
+pip install git+https://github.com/playbox-dev/trackstudio.git
 ```
 
 開発用:
 ```bash
 git clone https://github.com/playbox-dev/trackstudio
+cd trackstudio
 pip install -e .
+# またはuvを使用する場合（推奨）
+uv sync --dev
 ```
 
 ## Thinklet Cubeを使用する場合

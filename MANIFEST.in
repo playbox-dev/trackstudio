@@ -1,7 +1,6 @@
 # Include documentation
 include README.md
 include LICENSE
-include TRACKSTUDIO_README.md
 
 # Include package data
 recursive-include trackstudio *.py

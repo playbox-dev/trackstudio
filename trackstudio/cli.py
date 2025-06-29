@@ -62,7 +62,9 @@ def run(streams, config, tracker, merger, port, host, share, no_browser, vision_
 
     # Use streams from command line or config
     if config_data.get("rtsp_streams") is None:
-        list(streams) if streams else ["rtsp://localhost:8554/camera0", "rtsp://localhost:8554/camera1"]
+        config_data["rtsp_streams"] = (
+            [*streams] if streams else ["rtsp://localhost:8554/camera0", "rtsp://localhost:8554/camera1"]
+        )
 
     # Import here to avoid circular imports
     from . import launch  # noqa: PLC0415
